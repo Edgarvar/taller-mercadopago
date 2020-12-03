@@ -40,9 +40,12 @@
 						</ul>
 
 						<div class="mercadopago-button-container">
-							<button class="mercadopago-button">
-								Pagar la compra
-							</button>
+							<form action="/comprar" method="POST">
+								<input type="hidden" name="product_id">
+								<button class="mercadopago-button">
+									Pagar la compra
+								</button>
+							</form>
 						</div>
 					</article>
 				</div>
