@@ -58,8 +58,6 @@ module.exports = {
 
             notifications_url: host + 'notifications',
 
-            back_urls: 'https://mercadoliebrepago.herokuapp.com/',
-
             auto_return: 'approved',
 
             payer : {
