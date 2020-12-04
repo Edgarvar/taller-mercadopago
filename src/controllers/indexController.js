@@ -1,8 +1,9 @@
+const { response } = require("express");
 const mercadopago = require('mercadopago');
 
 mercadopago.configure({
-    access_token : 'TEST-5746360101443781-120117-e49d38a2b08634739a216400d4a18a2a-136499623',
-    intregrator_id: 'TEST-0bc4ce37-ca13-49b5-8330-4053837b1ab2'
+    access_token : 'APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398',
+    integrator_id: 'dev_24c65fb163bf11ea96500242ac130004'
 })
 
 module.exports = {
@@ -41,7 +42,7 @@ module.exports = {
         res.status(200).end('OK')
     },
 
-    comprar: (req, res) => {
+    buy: (req, res) => {
 
         const host = 'https://mercadoliebrepago.herokuapp.com/';
 
@@ -76,7 +77,6 @@ module.exports = {
 
             },
 
-
             payment_methods : {
                 excluded_payment_types: [
                     { id: 'atm'}
@@ -86,21 +86,15 @@ module.exports = {
                 ],
                 installments: 12
             },
-     
 
-
-            items: [
-                {
+            items: [{
                 id: "1",
-                picture_url: '',
+                picture_url: 'https://mercadoliebrepago.herokuapp.com/images/products/jordan.jpg',
                 title: 'Nombre del producto',
-                price: 2000,
                 description: 'Descripcion del producto',
                 unit_price: Number('999'),
                 quantity: 9
-                }
-
-            ]
+            }]
 
         }
 

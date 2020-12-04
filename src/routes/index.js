@@ -16,6 +16,6 @@ router.post('/notifications', indexController.notifications)
 
 
 // POST buy gestion
-router.post('/comprar', indexController.comprar);
+router.post('/buy', indexController.buy);
 
 module.exports = router;
