@@ -25,6 +25,12 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+app.post('/webhooks', function (req, res){
+  console.log('webkook', req.body); 
+
+  res.status(200).send(req.body);
+})
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
