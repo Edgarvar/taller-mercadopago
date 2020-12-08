@@ -13,7 +13,7 @@ module.exports = {
     detail: (req, res) => {
         return res.render("detail", { ...req.query });
     },
-    callback: (req,res) => {
+    callback: (req, res) => {
         console.log(req.query)
 
         if (req.query.status.includes('success')){
@@ -44,9 +44,9 @@ module.exports = {
 
     buy: (req, res) => {
 
-        const host = 'https://mercadoliebrepago.herokuapp.com/';
+        let host = 'http://localhost:3000/';
 
-        const url = host + 'callback?status=';
+        let url = host + 'callback?status=';
         
        
         let preference = {
@@ -57,14 +57,14 @@ module.exports = {
                 failure : url + 'failure',
             },
 
-            notifications_url: host + 'notifications',
+            notification_url: host + 'notifications',
 
             auto_return: 'approved',
 
             payer : {
                 name: 'Ryan',
                 surname: 'Dahl',
-                email: 'titan@gmail.com',
+                email: 'test_user_63274575@testuser.com',
                 phone: {
                     area_code: '11',
                     number: 55556666
@@ -88,13 +88,15 @@ module.exports = {
             },
 
             items: [{
-                id: "1",
+                id: "1234",
                 picture_url: 'https://mercadoliebrepago.herokuapp.com/images/products/jordan.jpg',
-                title: 'Nombre del producto',
+                title: 'Dispositvo móvil de Tienda e-commerce',
                 description: 'Descripcion del producto',
                 unit_price: Number('999'),
-                quantity: 9
-            }]
+                quantity: 1,
+            }],
+
+            external_reference: 'edgardo_vargas@outlook.com.ar'
 
         }
 
