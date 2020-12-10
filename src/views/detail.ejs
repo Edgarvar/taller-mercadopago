@@ -44,7 +44,7 @@
 						<div class="mercadopago-button-container">
 							<form action="/buy" method="POST">
 								<input type="hidden" name="title" value="<%= title %>">
-								<input type="hidden" name="price" value="<%= price %>">
+								<input type="hidden" name="price" value=<%= price %>>
 								<input type="hidden" name="img" value="https://edgarvar-mp-ecommerce-nodejs.herokuapp.com/images/products/<%= img %>">
 								<button class="mercadopago-button">
 									Pagar la compra
