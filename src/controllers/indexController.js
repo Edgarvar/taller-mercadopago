@@ -44,7 +44,7 @@ module.exports = {
 
     buy: (req, res) => {
 
-        let host = 'https://mercadoliebrepago.herokuapp.com/';
+        let host = 'https://edgarvar-mp-ecommerce-nodejs.herokuapp.com/';
 
         let url = host + 'callback?status=';
         
