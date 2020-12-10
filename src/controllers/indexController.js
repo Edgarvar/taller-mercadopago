@@ -51,6 +51,43 @@ module.exports = {
        
         let preference = {
 
+            payment_methods : {
+                installments: 6,
+                excluded_payment_methods: [
+                    { id: 'amex'}
+                ],
+                excluded_payment_types: [
+                    { id: 'atm'}
+                ]                    
+            },
+
+            payer : {
+                name: 'Lalo',
+                surname: 'Landa',
+                email: 'test_user_63274575@testuser.com',
+                phone: {
+                    area_code: '11',
+                    number: 22223333
+                },
+                address: {
+                    street_name: 'False',
+                    street_number: 123,
+                    zip_code:'1111',
+                }
+
+            },
+
+            items: [{
+                id: "1234",
+                title: req.query.title,
+                picture_url: req.query.img,
+                description: 'Dispositivo móvil de Tienda e-commerce',
+                unit_price: Number(req.query.price),
+                quantity: 1,
+            }],
+
+            external_reference: 'edgardo_vargas@outlook.com.ar',
+
             back_urls:{
                 success : url + 'success',
                 pending : url + 'pending',
@@ -60,43 +97,6 @@ module.exports = {
             notification_url: host + 'notifications',
 
             auto_return: 'approved',
-
-            payer : {
-                name: 'Ryan',
-                surname: 'Dahl',
-                email: 'test_user_63274575@testuser.com',
-                phone: {
-                    area_code: '11',
-                    number: 55556666
-                },
-                address: {
-                    zip_code:'1234',
-                    street_name: 'Monroe',
-                    street_number: 850 
-                }
-
-            },
-
-            payment_methods : {
-                excluded_payment_types: [
-                    { id: 'atm'}
-                ],
-                excluded_payment_methods: [
-                    { id: 'visa'}
-                ],
-                installments: 12
-            },
-
-            items: [{
-                id: "1234",
-                picture_url: 'https://mercadoliebrepago.herokuapp.com/images/products/jordan.jpg',
-                title: 'Dispositvo móvil de Tienda e-commerce',
-                description: 'Descripcion del producto',
-                unit_price: Number('999'),
-                quantity: 1,
-            }],
-
-            external_reference: 'edgardo_vargas@outlook.com.ar'
 
         }
 
