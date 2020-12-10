@@ -82,7 +82,7 @@ module.exports = {
                 title: req.query.title,
                 picture_url: req.query.img,
                 description: 'Dispositivo móvil de Tienda e-commerce',
-                unit_price: Number(req.query.price),
+                unit_price: Number('999'),
                 quantity: 1,
             }],
 
